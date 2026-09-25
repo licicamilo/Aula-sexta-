@@ -42,7 +42,7 @@ button {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; add
     backdrop-filter: blur(12px);
 }
 
@@ -1180,3 +1180,4 @@ button {
 }
 
 </style>
+ 
