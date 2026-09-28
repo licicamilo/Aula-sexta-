@@ -1,198 +1,74 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login</title>
+   <meta charset="UTF-8">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #007bff, #004aad);
-            min-height: 100vh;
+   <title>Login</title>
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+   <link rel="stylesheet" href="css/auth.css">
 
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 420px;
-
-            background: white;
-            padding: 35px;
-
-            border-radius: 15px;
-
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .logo {
-            text-align: center;
-            color: #007bff;
-
-            font-size: 30px;
-            font-weight: bold;
-
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
-
-            margin-bottom: 25px;
-        }
-
-        .campo {
-            margin-bottom: 18px;
-        }
-
-        label {
-            display: block;
-
-            margin-bottom: 7px;
-
-            color: #333;
-            font-weight: bold;
-        }
-
-        input {
-            width: 100%;
-
-            padding: 13px;
-
-            border: 1px solid #ccc;
-            border-radius: 7px;
-
-            font-size: 15px;
-        }
-
-        input:focus {
-            outline: none;
-
-            border-color: #007bff;
-
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-        }
-
-        button {
-            width: 100%;
-
-            padding: 13px;
-
-            background: #007bff;
-            color: white;
-
-            border: none;
-            border-radius: 7px;
-
-            font-size: 16px;
-            font-weight: bold;
-
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #0056b3;
-        }
-
-        .link {
-            text-align: center;
-
-            margin-top: 20px;
-
-            color: #555;
-        }
-
-        .link a {
-            color: #007bff;
-
-            font-weight: bold;
-
-            text-decoration: none;
-        }
-
-        .link a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 
 <body>
 
-    <main class="container">
+   <main class="auth-container">
 
-        <div class="logo">
-            Meu Site
-        </div>
+       <h2>Bem-vindo de volta!</h2>
 
-        <h2>Entrar</h2>
+       <p class="auth-description">Faça login para acessar sua conta</p>
 
-        <form action="#" method="POST">
+ 
 
-            <div class="campo">
+       <form action="#" method="POST">
 
-                <label for="email">
-                    E-mail
-                </label>
+           <div>
 
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="seuemail@exemplo.com"
-                    required
-                >
+               <label for="email">E-mail</label>
 
-            </div>
+               <input type="email" id="email" name="email" placeholder="seu@email.com" required>
 
+           </div>
 
-            <div class="campo">
+ 
 
-                <label for="senha">
-                    Senha
-                </label>
+           <div>
 
-                <input
-                    type="password"
-                    id="senha"
-                    name="senha"
-                    placeholder="Digite sua senha"
-                    required
-                >
+               <label for="password">Senha</label>
 
-            </div>
+               <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
 
+           </div>
 
-            <button type="submit">
-                Entrar
-            </button>
+ 
 
-        </form>
+           <div class="auth-options">
 
+               <label for="remember">
 
-        <p class="link">
+                   <input type="checkbox" id="remember" name="remember"> Lembrar de mim
 
-            Ainda não possui uma conta?
+               </label>
 
-            <a href="cadastro.html">
-                Criar conta
-            </a>
+               <a href="#">Esqueceu a senha?</a>
 
-        </p>
+           </div>
 
-    </main>
+ 
+
+           <button type="submit">Entrar</button>
+
+       </form>
+
+ 
+
+       <p class="login-link">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+
+   </main>
 
 </body>
 
