@@ -1,0 +1,31 @@
+// Menu mobile
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
+
+if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+}
+
+// Modal das trilhas
+function abrirTrilha(nome) {
+    const modal = document.getElementById('trailModal');
+    const title = document.getElementById('modalTitle');
+    if (modal && title) {
+        title.textContent = nome;
+        modal.classList.add('active');
+    }
+}
+
+const modalClose = document.getElementById('modalClose');
+const modalButton = document.getElementById('modalButton');
+const modal = document.getElementById('trailModal');
+
+if (modalClose) modalClose.addEventListener('click', () => modal.classList.remove('active'));
+if (modalButton) modalButton.addEventListener('click', () => modal.classList.remove('active'));
+if (modal) {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+    });
+}
