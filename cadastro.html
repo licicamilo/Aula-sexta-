@@ -4,71 +4,411 @@
 
 <head>
 
-   <meta charset="UTF-8">
+ <meta charset="UTF-8">
 
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <title>Login</title>
+ <title>Cadastro</title>
 
-   <link rel="stylesheet" href="css/auth.css">
+ <link rel="stylesheet" href="css/auth.css">
 
 </head>
 
 <body>
 
-   <main class="auth-container">
+ 
 
-       <h2>Bem-vindo de volta!</h2>
+ <main class="auth-container">
 
-       <p class="auth-description">Faça login para acessar sua conta</p>
+   <h2>Criar Conta</h2>
+
+   
+
+   <form action="#" method="POST">
+
+     <div>
+
+       <label for="nome">Nome Completo:</label>
+
+       <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+     </div>
 
  
 
-       <form action="#" method="POST">
+     <div>
 
-           <div>
+       <label for="email">E-mail:</label>
 
-               <label for="email">E-mail</label>
+       <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
 
-               <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-
-           </div>
+     </div>
 
  
 
-           <div>
+     <div>
 
-               <label for="password">Senha</label>
+       <label for="senha">Senha:</label>
 
-               <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+       <input type="password" id="senha" name="senha" placeholder="Digite sua senha" minlength="6" required>
 
-           </div>
-
- 
-
-           <div class="auth-options">
-
-               <label for="remember">
-
-                   <input type="checkbox" id="remember" name="remember"> Lembrar de mim
-
-               </label>
-
-               <a href="#">Esqueceu a senha?</a>
-
-           </div>
+     </div>
 
  
 
-           <button type="submit">Entrar</button>
+     <div>
+
+       <label for="confirmarSenha">Confirmar Senha:</label>
+
+       <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" required>
+
+     </div>
+
+ 
+
+     <button type="submit">Cadastrar</button>
+
+   </form>
+
+ 
+
+   <p class="login-link">
+
+     Já possui uma conta? <a href="login.html">Faça login</a>
+
+   </p>
+
+ </main>
+
+ 
+
+</body>
+
+</html>
+
+ 
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+   <meta charset="UTF-8">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Cadastro de Pessoas</title>
+
+ 
+
+   <style>
+
+       * {
+
+           box-sizing: border-box;
+
+       }
+
+ 
+
+       body {
+
+           margin: 0;
+
+           font-family: Arial, sans-serif;
+
+           background: #f2f4f7;
+
+           padding: 40px 20px;
+
+       }
+
+ 
+
+       .container {
+
+           max-width: 600px;
+
+           margin: auto;
+
+           background: white;
+
+           padding: 30px;
+
+           border-radius: 12px;
+
+           box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+       }
+
+ 
+
+       h1 {
+
+           text-align: center;
+
+           color: #333;
+
+           margin-bottom: 25px;
+
+       }
+
+ 
+
+       label {
+
+           display: block;
+
+           margin-top: 15px;
+
+           margin-bottom: 5px;
+
+           font-weight: bold;
+
+           color: #444;
+
+       }
+
+ 
+
+       input {
+
+           width: 100%;
+
+           padding: 12px;
+
+           border: 1px solid #ccc;
+
+           border-radius: 6px;
+
+           font-size: 16px;
+
+       }
+
+ 
+
+       input:focus {
+
+           outline: none;
+
+           border-color: #007bff;
+
+       }
+
+ 
+
+       button {
+
+           width: 100%;
+
+           margin-top: 25px;
+
+           padding: 13px;
+
+           background: #007bff;
+
+           color: white;
+
+           border: none;
+
+           border-radius: 6px;
+
+           font-size: 16px;
+
+           cursor: pointer;
+
+       }
+
+ 
+
+       button:hover {
+
+           background: #0056b3;
+
+       }
+
+ 
+
+       #mensagem {
+
+           margin-top: 20px;
+
+           text-align: center;
+
+           color: green;
+
+           font-weight: bold;
+
+       }
+
+   </style>
+
+</head>
+
+ 
+
+<body>
+
+ 
+
+   <div class="container">
+
+ 
+
+       <h1>Cadastro de Pessoa</h1>
+
+ 
+
+       <form id="cadastroForm">
+
+ 
+
+           <label for="nome">Nome completo</label>
+
+           <input
+
+               type="text"
+
+               id="nome"
+
+               name="nome"
+
+               placeholder="Digite seu nome"
+
+               required
+
+           >
+
+ 
+
+           <label for="email">E-mail</label>
+
+           <input
+
+               type="email"
+
+               id="email"
+
+               name="email"
+
+               placeholder="Digite seu e-mail"
+
+               required
+
+           >
+
+ 
+
+           <label for="telefone">Telefone</label>
+
+           <input
+
+               type="tel"
+
+               id="telefone"
+
+               name="telefone"
+
+               placeholder="(00) 00000-0000"
+
+           >
+
+ 
+
+           <label for="cpf">CPF</label>
+
+           <input
+
+               type="text"
+
+               id="cpf"
+
+               name="cpf"
+
+               placeholder="000.000.000-00"
+
+           >
+
+ 
+
+           <label for="nascimento">Data de nascimento</label>
+
+           <input
+
+               type="date"
+
+               id="nascimento"
+
+               name="nascimento"
+
+           >
+
+ 
+
+           <label for="senha">Senha</label>
+
+           <input
+
+               type="password"
+
+               id="senha"
+
+               name="senha"
+
+               placeholder="Digite uma senha"
+
+               required
+
+           >
+
+ 
+
+           <button type="submit">
+
+               Cadastrar
+
+           </button>
+
+ 
 
        </form>
 
  
 
-       <p class="login-link">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+       <div id="mensagem"></div>
 
-   </main>
+ 
+
+   </div>
+
+ 
+
+   <script>
+
+       const formulario = document.getElementById("cadastroForm");
+
+       const mensagem = document.getElementById("mensagem");
+
+ 
+
+       formulario.addEventListener("submit", function(event) {
+
+           event.preventDefault();
+
+ 
+
+           mensagem.textContent = "Cadastro realizado com sucesso!";
+
+ 
+
+           formulario.reset();
+
+       });
+
+   </script>
+
+ 
 
 </body>
 
