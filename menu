@@ -1,558 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?>
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.getElementById("nav");
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background"
-    android:fillViewport="true">
+/*
+ * Abre e fecha o menu no celular
+ */
+menuToggle.addEventListener("click", function () {
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    nav.classList.toggle("active");
 
-        <!-- HEADER -->
+    const aberto = nav.classList.contains("active");
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:background="@color/white">
+    menuToggle.setAttribute(
+        "aria-expanded",
+        aberto
+    );
 
-            <TextView
-                android:id="@+id/logoIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:text="⚡"
-                android:textSize="24sp"
-                android:textColor="@color/primary" />
+});
 
-            <TextView
-                android:id="@+id/logoText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Conecta Futuro"
-                android:textColor="@color/text_primary"
-                android:textSize="20sp"
-                android:textStyle="bold" />
 
-            <ImageButton
-                android:id="@+id/menuButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@android:drawable/ic_menu_more"
-                android:contentDescription="Abrir menu" />
+/*
+ * Fecha o menu quando o usuário
+ * seleciona uma opção
+ */
+const links = nav.querySelectorAll("a");
 
-        </LinearLayout>
+links.forEach(function (link) {
 
-        <!-- HERO -->
+    link.addEventListener("click", function () {
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp"
-            android:background="@color/primary">
+        nav.classList.remove("active");
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hero_badge"
-                android:textColor="@color/white"
-                android:textSize="13sp"
-                android:background="@drawable/badge_background"
-                android:padding="10dp" />
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/hero_title"
-                android:textColor="@color/white"
-                android:textSize="38sp"
-                android:textStyle="bold" />
+    });
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/hero_description"
-                android:textColor="#E0E7FF"
-                android:textSize="17sp"
-                android:lineSpacingExtra="4dp" />
+});
 
-            <!-- BOTÕES -->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:orientation="vertical">
+/*
+ * Destaca a seção atual no menu
+ */
+const sections = document.querySelectorAll("main section");
 
-                <Button
-                    android:id="@+id/startButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:text="@string/start_now"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/primary"
-                    android:background="@drawable/button_white" />
+window.addEventListener("scroll", function () {
 
-                <Button
-                    android:id="@+id/aboutButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/about_project"
-                    android:textSize="16sp"
-                    android:textColor="@color/white"
-                    android:background="@drawable/button_outline" />
+    let atual = "";
 
-            </LinearLayout>
+    sections.forEach(function (section) {
 
-            <!-- INFORMAÇÕES -->
+        const top = section.offsetTop - 150;
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:orientation="horizontal">
+        if (window.scrollY >= top) {
+            atual = section.getAttribute("id");
+        }
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
+    });
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="4"
-                        android:textColor="@color/white"
-                        android:textSize="28sp"
-                        android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Trilhas"
-                        android:textColor="#DBEAFE"
-                        android:textSize="12sp" />
+    links.forEach(function (link) {
 
-                </LinearLayout>
+        link.classList.remove("active");
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
+        const href = link.getAttribute("href");
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100%"
-                        android:textColor="@color/white"
-                        android:textSize="28sp"
-                        android:textStyle="bold" />
+        if (href === "#" + atual) {
+            link.classList.add("active");
+        }
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Gratuito"
-                        android:textColor="#DBEAFE"
-                        android:textSize="12sp" />
+    });
 
-                </LinearLayout>
+});
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Prático"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Aplicado"
-                        android:textColor="#DBEAFE"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- APRENDIZADO -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/learning_label"
-                android:textColor="@color/primary"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/learning_title"
-                android:textColor="@color/text_primary"
-                android:textSize="28sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="@string/learning_description"
-                android:textColor="@color/text_secondary"
-                android:textSize="16sp"
-                android:lineSpacingExtra="4dp" />
-
-            <!-- CARD 1 -->
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardInformatica"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
-                        android:gravity="center"
-                        android:text="💻"
-                        android:textSize="28sp"
-                        android:background="@drawable/icon_blue" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Informática Básica"
-                        android:textColor="@color/text_primary"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Aprenda conceitos fundamentais de computadores, internet, arquivos, ferramentas digitais e muito mais."
-                        android:textColor="@color/text_secondary"
-                        android:textSize="14sp"
-                        android:lineSpacingExtra="3dp" />
-
-                    <TextView
-                        android:id="@+id/explore1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="Explorar →"
-                        android:textColor="@color/primary"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- CARD 2 -->
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardIA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
-                        android:gravity="center"
-                        android:text="🤖"
-                        android:textSize="28sp"
-                        android:background="@drawable/icon_purple" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="IA e Mercado"
-                        android:textColor="@color/text_primary"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Entenda como a inteligência artificial está transformando profissões e oportunidades."
-                        android:textColor="@color/text_secondary"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/explore2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="Explorar →"
-                        android:textColor="@color/secondary"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- CARD 3 -->
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardEmprego"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
-                        android:gravity="center"
-                        android:text="💼"
-                        android:textSize="28sp"
-                        android:background="@drawable/icon_orange" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Primeiro Emprego"
-                        android:textColor="@color/text_primary"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Aprenda a preparar currículo, participar de entrevistas e buscar oportunidades."
-                        android:textColor="@color/text_secondary"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/explore3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="Explorar →"
-                        android:textColor="@color/orange"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- CARD 4 -->
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardCarreira"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
-                        android:gravity="center"
-                        android:text="🚀"
-                        android:textSize="28sp"
-                        android:background="@drawable/icon_green" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Carreiras em Tecnologia"
-                        android:textColor="@color/text_primary"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Conheça áreas como programação, UX/UI, dados, segurança e marketing digital."
-                        android:textColor="@color/text_secondary"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/explore4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="Explorar →"
-                        android:textColor="@color/green"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-        <!-- CTA -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="28dp"
-            android:background="@color/secondary">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cta_label"
-                android:textColor="#DDD6FE"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/cta_title"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/cta_description"
-                android:textColor="#E9D5FF"
-                android:textSize="16sp" />
-
-            <Button
-                android:id="@+id/trilhasButton"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="20dp"
-                android:text="Explorar trilhas →"
-                android:textColor="@color/secondary"
-                android:textStyle="bold"
-                android:background="@drawable/button_white" />
-
-        </LinearLayout>
-
-        <!-- FOOTER -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp"
-            android:background="#111827">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="⚡ Conecta Futuro"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Tecnologia que conecta você às oportunidades."
-                android:textColor="#9CA3AF"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="Centro Universitário Maurício de Nassau"
-                android:textColor="#D1D5DB"
-                android:textSize="13sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Análise e Desenvolvimento de Sistemas"
-                android:textColor="#9CA3AF"
-                android:textSize="13sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="© 2026 Conecta Futuro. Projeto de extensão acadêmica."
-                android:textColor="#6B7280"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</ScrollView>
