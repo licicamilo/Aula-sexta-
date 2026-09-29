@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnologias | Conecta Futuro</title>
     <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="js/techol">
 </head>
 <body>
 
@@ -35,13 +36,13 @@
                 <p>Conheça algumas das áreas que fazem parte do mercado de tecnologia.</p>
             </div>
 
-            <div class="career-grid">
-                <div class="career-card"><span>💻</span><h3>Programação</h3><p>Criação de sites, sistemas e aplicativos.</p></div>
-                <div class="career-card"><span>🎨</span><h3>UX/UI</h3><p>Criação de experiências e interfaces digitais.</p></div>
-                <div class="career-card"><span>📊</span><h3>Dados</h3><p>Transformação de informações em conhecimento.</p></div>
-                <div class="career-card"><span>🔐</span><h3>Cibersegurança</h3><p>Proteção de sistemas, dados e usuários.</p></div>
-                <div class="career-card"><span>📱</span><h3>Marketing Digital</h3><p>Estratégias para comunicação no ambiente digital.</p></div>
-                <div class="career-card"><span>☁️</span><h3>Cloud & TI</h3><p>Infraestrutura, redes e serviços digitais.</p></div>
+            <div> <class="career-grid">
+                <div> <class="career-card"><span>💻</span><h3>Programação</h3><p>Criação de sites, sistemas e aplicativos.</p></div>
+                <div> <class="career-card"><span>🎨</span><h3>UX/UI</h3><p>Criação de experiências e interfaces digitais.</p></div>
+                <div> <class="career-card"><span>📊</span><h3>Dados</h3><p>Transformação de informações em conhecimento.</p></div>
+                <div> <class="career-card"><span>🔐</span><h3>Cibersegurança</h3><p>Proteção de sistemas, dados e usuários.</p></div>
+                <div> <class="career-card"><span>📱</span><h3>Marketing Digital</h3><p>Estratégias para comunicação no ambiente digital.</p></div>
+                <div> <class="career-card"><span>☁️</span><h3>Cloud & TI</h3><p>Infraestrutura, redes e serviços digitais.</p></div>
             </div>
         </div>
     </section>
