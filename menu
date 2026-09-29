@@ -1,76 +1,38 @@
-const menuToggle = document.getElementById("menuToggle");
-const nav = document.getElementById("nav");
-
-/*
- * Abre e fecha o menu no celular
- */
-menuToggle.addEventListener("click", function () {
-
-    nav.classList.toggle("active");
-
-    const aberto = nav.classList.contains("active");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        aberto
-    );
-
-});
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
 
 
-/*
- * Fecha o menu quando o usuário
- * seleciona uma opção
- */
-const links = nav.querySelectorAll("a");
+@media (max-width: 768px) {
 
-links.forEach(function (link) {
+    .menu-toggle {
+        display: block;
+    }
 
-    link.addEventListener("click", function () {
+    .nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
 
-        nav.classList.remove("active");
+    .nav.active {
+        display: flex;
+    }
 
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+    .nav a {
+        padding: 15px;
+        text-decoration: none;
+    }
 
-    });
-
-});
-
-
-/*
- * Destaca a seção atual no menu
- */
-const sections = document.querySelectorAll("main section");
-
-window.addEventListener("scroll", function () {
-
-    let atual = "";
-
-    sections.forEach(function (section) {
-
-        const top = section.offsetTop - 150;
-
-        if (window.scrollY >= top) {
-            atual = section.getAttribute("id");
-        }
-
-    });
-
-
-    links.forEach(function (link) {
-
-        link.classList.remove("active");
-
-        const href = link.getAttribute("href");
-
-        if (href === "#" + atual) {
-            link.classList.add("active");
-        }
-
-    });
-
-});
-
+}
