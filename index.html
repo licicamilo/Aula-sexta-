@@ -1,144 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trilhas | Conecta Futuro</title>
-    <link rel="stylesheet" href="css/style.css">
-     <link rel="login" href="paginainicial/login">
-      <link rel="techol" href="paginainicial/techol.html">
-</head>
-<body>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta  name="description" content="Conecta futuro - Capatição tecnológica e preparação para o mercado de trabalho">
 
-<header class="header">
-    <div class="container navbar">
-        <a href="index.html" class="logo">
-            <span class="logo-icon">⚡</span>
-            <span class="logo-text">Conecta Futuro</span>
-        </a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
-        <nav class="nav" id="nav">
-            <a href="index.html">Início</a>
-            <a href="trilhas.html" class="active">Trilhas</a>
-            <a href="tecnologias.html">Tecnologias</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="cadastro.html" class="nav-button">Começar agora</a>
-        </nav>
-    </div>
-</header>
+        <title>Conecta Futuro | Tecnologia e Oportunidades</title>
 
-<main>
-    <section class="trilhas" id="trilhas">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">TRILHAS DE CONHECIMENTO</span>
-                <h2>Escolha por onde <span>começar</span></h2>
-                <p>Aprenda no seu ritmo através de conteúdos rápidos, objetivos e práticos.</p>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <!-- ==============================================
+            cabeçalho do site
+        =============================================== -->
+
+        <header classe="header">
+
+            <div class="container navbar">
+                <a href="inicio" class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Conecta Futuro</span>
+                </a>
+
+                <button class="menu-toggle" id="menutoggle" aria-label="abrir menu">
+                    ☰
+                </button>
+                
+                <nav class="nav" id="nav">
+                    <a href="#inicio">Início</a>
+                    <a href="#trilhas">Trilhas</a>
+                    <a href="#tecnologias">Tecnologias</a>
+                    <a href="#sobre">Sobre</a>
+
+                    <a href="cadastro.html" class="nav-button">Começar agora</a>
+                </nav>
+
+
             </div>
 
-            <div class="trail-grid">
-                <!-- Trilha 01 -->
-                <article class="trail-card" id="trilha-1">
-                    <div class="trail-number">01</div>
-                    <div class="trail-icon">💻</div>
-                    <span class="trail-tag">FUNDAMENTOS</span>
-                    <h3>Informática Básica</h3>
-                    <p>Desenvolva conhecimentos essenciais para utilizar computadores, internet e ferramentas digitais.</p>
-                    <ul>
-                        <li>Computadores e periféricos</li>
-                        <li>Internet e segurança</li>
-                        <li>Arquivos e ferramentas digitais</li>
-                    </ul>
-                    <button class="trail-button" onclick="abrirTrilha('Informática Básica')">Começar trilha →</button>
-                </article>
+        </header>
 
-                <!-- Trilha 02 -->
-                <article class="trail-card featured" id="trilha-2">
-                    <div class="trail-number">02</div>
-                    <div class="trail-icon">🤖</div>
-                    <span class="trail-tag">TECNOLOGIA</span>
-                    <h3>IA e Mercado de Trabalho</h3>
-                    <p>Descubra como a inteligência artificial está transformando o mercado de trabalho.</p>
-                    <ul>
-                        <li>O que é Inteligência Artificial</li>
-                        <li>IA no trabalho</li>
-                        <li>Ferramentas de IA</li>
-                    </ul>
-                    <button class="trail-button" onclick="abrirTrilha('IA e Mercado de Trabalho')">Começar trilha →</button>
-                </article>
+        <main>
+            <!-- ===================================
+                  Hero/ Início 
+             ======================================= -->
 
-                <!-- Trilha 03 -->
-                <article class="trail-card" id="trilha-3">
-                    <div class="trail-number">03</div>
-                    <div class="trail-icon">💼</div>
-                    <span class="trail-tag">CARREIRA</span>
-                    <h3>Primeiro Emprego</h3>
-                    <p>Prepare-se para dar os primeiros passos no mercado de trabalho.</p>
-                    <ul>
-                        <li>Currículo</li>
-                        <li>Entrevista de emprego</li>
-                        <li>Comunicação profissional</li>
-                    </ul>
-                    <button class="trail-button" onclick="abrirTrilha('Primeiro Emprego')">Começar trilha →</button>
-                </article>
-
-                <!-- Trilha 04 -->
-                <article class="trail-card" id="trilha-4">
-                    <div class="trail-number">04</div>
-                    <div class="trail-icon">🚀</div>
-                    <span class="trail-tag">PROFISSÕES</span>
-                    <h3>Carreiras em Tecnologia</h3>
-                    <p>Conheça diferentes possibilidades profissionais dentro do universo da tecnologia.</p>
-                    <ul>
-                        <li>Programação</li>
-                        <li>UX/UI e Dados</li>
-                        <li>Cibersegurança e Marketing</li>
-                    </ul>
-                    <button class="trail-button" onclick="abrirTrilha('Carreiras em Tecnologia')">Começar trilha →</button>
-                </article>
-            </div>
-        </div>
-    </section>
-</main>
-
-<!-- Modal -->
-<div class="modal" id="trailModal">
-    <div class="modal-content">
-        <button class="modal-close" id="modalClose">×</button>
-        <span class="section-label">TRILHA DE CONHECIMENTO</span>
-        <h2 id="modalTitle">Trilha</h2>
-        <p>Em breve você poderá acessar as aulas, tutoriais e atividades desta trilha.</p>
-        <button class="btn btn-primary" id="modalButton">Entendi</button>
-    </div>
-</div>
-
-<footer class="footer">
-    <!-- mesmo footer do index.html -->
-    <div class="container footer-content">
-        <div>
-            <a href="index.html" class="logo footer-logo">
-                <span class="logo-icon">⚡</span>
-                <span>Conecta<span>Futuro</span></span>
-            </a>
-            <p>Tecnologia que conecta você às oportunidades.</p>
-        </div>
-        <div class="footer-links">
-            <h4>Projeto</h4>
-            <a href="sobre.html">Sobre</a>
-            <a href="trilhas.html">Trilhas</a>
-            <a href="tecnologias.html">Tecnologia</a>
-        </div>
-        <div class="footer-links">
-            <h4>Instituição</h4>
-            <p>Centro Universitário Maurício de Nassau</p>
-            <p>Análise e Desenvolvimento de Sistemas</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2026 Conecta Futuro. Projeto de extensão acadêmica.</p>
-    </div>
-</footer>
-
-<script src="js/script.js"></script>
-</body>
-</html>
+             <section class="hero" id="inicio">
+                <div class="container hero-content">
+                    <div class="hero-texto">
+                        <span class="badge">
+                            🚀 Projeto de extensão • 2026.2
+                        </span>
+                        <h1>
+                            Conecta-se com 
+                            <span>futuro</span>
+                        </h1>
+                        <p>
+                            Aprenda novas habilidades, desenvolva suas compentências digitais e prepare-se para o mercado de trabalho.
+                        </p>
+                    <div class="hero-buttons">
+                        <a href="cadastro.html" class="btn btn-primary">Começar agora →</a>
+                        <a href="#sobre" class="btn btn-secondary">Conheça o projeto</a>
+                    </div>   
+                    </div>
