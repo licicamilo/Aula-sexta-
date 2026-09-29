@@ -1,67 +1,658 @@
-<!DOCTYPE html>
-<html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta  name="description" content="Conecta futuro - Capatição tecnológica e preparação para o mercado de trabalho">
+<!-- ==================================================
+     CABEÇALHO
+=================================================== -->
 
-        <title>Conecta Futuro | Tecnologia e Oportunidades</title>
+<header class="header">
 
-        <link rel="stylesheet" href="css/style.css">
-         <link rel="stylesheet" href="js/sobre.html">
-    </head>
+    <div class="container navbar">
 
-    <body>
-        <!-- ==============================================
-            cabeçalho do site
-        =============================================== -->
+        <!-- LOGO -->
 
-        <header classe="header">
+        <a href="#inicio" class="logo">
 
-            <div class="container navbar">
-                <a href="inicio" class="logo">
-                    <span class="logo-icon">⚡</span>
-                    <span class="logo-text">Conecta Futuro</span>
-                </a>
+            <span class="logo-icon">⚡</span>
 
-                <button class="menu-toggle" id="menutoggle" aria-label="abrir menu">
-                    ☰
-                </button>
-                
-                <nav class="nav" id="nav">
-                    <a href="#inicio">Início</a>
-                    <a href="#trilhas">Trilhas</a>
-                    <a href="#tecnologias">Tecnologias</a>
-                    <a href="#sobre">Sobre</a>
+            <span class="logo-text">
+                Conecta Futuro
+            </span>
 
-                    <a href="cadastro.html" class="nav-button">Começar agora</a>
-                </nav>
+        </a>
+
+
+        <!-- BOTÃO MENU MOBILE -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Abrir menu"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
+
+        <!-- MENU -->
+
+        <nav class="nav" id="nav">
+
+            <a href="#inicio" class="active">
+                Início
+            </a>
+
+            <a href="#trilhas">
+                Trilhas
+            </a>
+
+            <a href="#tecnologias">
+                Tecnologias
+            </a>
+
+            <a href="#sobre">
+                Sobre
+            </a>
+
+            <a href="#cadastro" class="nav-button">
+                Começar agora
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ==================================================
+     CONTEÚDO PRINCIPAL
+=================================================== -->
+
+<main>
+
+
+    <!-- ==================================================
+         HERO / INÍCIO
+    =================================================== -->
+
+    <section class="hero" id="inicio">
+
+        <div class="container hero-content">
+
+            <div class="hero-texto">
+
+                <span class="badge">
+                    🚀 Projeto de extensão • 2026.2
+                </span>
+
+                <h1>
+                    Conecte-se com o
+                    <span>futuro</span>
+                </h1>
+
+                <p>
+                    Aprenda novas habilidades, desenvolva suas
+                    competências digitais e prepare-se para o
+                    mercado de trabalho.
+                </p>
+
+
+                <!-- BOTÕES -->
+
+                <div class="hero-buttons">
+
+                    <a href="#cadastro"
+                       class="btn btn-primary">
+
+                        Começar agora →
+
+                    </a>
+
+                    <a href="#sobre"
+                       class="btn btn-secondary">
+
+                        Conheça o projeto
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMAÇÕES -->
+
+            <div class="hero-infor">
+
+                <div>
+
+                    <strong>4</strong>
+
+                    <span>
+                        Trilhas disponíveis
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>100%</strong>
+
+                    <span>
+                        Gratuito
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>Prático</strong>
+
+                    <span>
+                        Aprendizado aplicado
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         TRILHAS
+    =================================================== -->
+
+    <section
+        class="learning"
+        id="trilhas">
+
+        <div class="container">
+
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    APRENDA E DESENVOLVA
+                </span>
+
+                <h2>
+                    Conhecimento para
+                    <span>novas oportunidades</span>
+                </h2>
+
+                <p>
+                    Conteúdos simples, práticos e acessíveis
+                    para ajudar você a desenvolver habilidades
+                    importantes para o mundo digital.
+                </p>
+
+            </div>
+
+
+            <!-- CARDS -->
+
+            <div class="feature-grid">
+
+
+                <!-- TRILHA 1 -->
+
+                <article
+                    class="feature-card"
+                    id="trilha-1">
+
+                    <div class="feature-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Informática Básica
+                    </h3>
+
+                    <p>
+                        Aprenda conceitos fundamentais de
+                        computadores, internet, arquivos,
+                        ferramentas digitais e muito mais.
+                    </p>
+
+                    <a href="#cadastro">
+                        Explorar →
+                    </a>
+
+                </article>
+
+
+
+                <!-- TRILHA 2 -->
+
+                <article
+                    class="feature-card"
+                    id="trilha-2">
+
+                    <div class="feature-icon purple">
+                        🤖
+                    </div>
+
+                    <h3>
+                        IA e Mercado
+                    </h3>
+
+                    <p>
+                        Entenda como a inteligência artificial
+                        está transformando profissões e
+                        oportunidades.
+                    </p>
+
+                    <a href="#cadastro">
+                        Explorar →
+                    </a>
+
+                </article>
+
+
+
+                <!-- TRILHA 3 -->
+
+                <article
+                    class="feature-card"
+                    id="trilha-3">
+
+                    <div class="feature-icon orange">
+                        💼
+                    </div>
+
+                    <h3>
+                        Primeiro Emprego
+                    </h3>
+
+                    <p>
+                        Aprenda a preparar currículo,
+                        participar de entrevistas e buscar
+                        oportunidades.
+                    </p>
+
+                    <a href="#cadastro">
+                        Explorar →
+                    </a>
+
+                </article>
+
+
+
+                <!-- TRILHA 4 -->
+
+                <article
+                    class="feature-card"
+                    id="trilha-4">
+
+                    <div class="feature-icon green">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Carreiras em Tecnologia
+                    </h3>
+
+                    <p>
+                        Conheça áreas como programação,
+                        UX/UI, dados, segurança e
+                        marketing digital.
+                    </p>
+
+                    <a href="#cadastro">
+                        Explorar →
+                    </a>
+
+                </article>
 
 
             </div>
 
-        </header>
+        </div>
 
-        <main>
-            <!-- ===================================
-                  Hero/ Início 
-             ======================================= -->
+    </section>
 
-             <section class="hero" id="inicio">
-                <div class="container hero-content">
-                    <div class="hero-texto">
-                        <span class="badge">
-                            🚀 Projeto de extensão • 2026.2
-                        </span>
-                        <h1>
-                            Conecta-se com 
-                            <span>futuro</span>
-                        </h1>
-                        <p>
-                            Aprenda novas habilidades, desenvolva suas compentências digitais e prepare-se para o mercado de trabalho.
-                        </p>
-                    <div class="hero-buttons">
-                        <a href="cadastro.html" class="btn btn-primary">Começar agora →</a>
-                        <a href="#sobre" class="btn btn-secondary">Conheça o projeto</a>
-                    </div>   
+
+
+    <!-- ==================================================
+         TECNOLOGIAS
+    =================================================== -->
+
+    <section
+        class="technologies"
+        id="tecnologias">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    TECNOLOGIA
+                </span>
+
+                <h2>
+                    Prepare-se para o
+                    <span>mundo digital</span>
+                </h2>
+
+                <p>
+                    Desenvolva conhecimentos que podem ajudar
+                    você a utilizar a tecnologia de forma
+                    prática, segura e profissional.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🌐
                     </div>
+
+                    <h3>
+                        Internet
+                    </h3>
+
+                    <p>
+                        Aprenda a utilizar a internet,
+                        pesquisar informações e utilizar
+                        ferramentas online.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon purple">
+                        🧠
+                    </div>
+
+                    <h3>
+                        Inteligência Artificial
+                    </h3>
+
+                    <p>
+                        Conheça conceitos básicos de IA e
+                        descubra como essa tecnologia pode
+                        ser utilizada no dia a dia.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon orange">
+                        🔐
+                    </div>
+
+                    <h3>
+                        Segurança Digital
+                    </h3>
+
+                    <p>
+                        Aprenda boas práticas para proteger
+                        seus dados e utilizar a tecnologia
+                        com segurança.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon green">
+                        📊
+                    </div>
+
+                    <h3>
+                        Ferramentas Digitais
+                    </h3>
+
+                    <p>
+                        Conheça ferramentas utilizadas para
+                        estudo, trabalho e organização.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         SOBRE
+    =================================================== -->
+
+    <section
+        class="about"
+        id="sobre">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    SOBRE O PROJETO
+                </span>
+
+                <h2>
+                    Tecnologia que conecta você
+                    às <span>oportunidades</span>
+                </h2>
+
+                <p>
+                    O Conecta Futuro é um projeto de extensão
+                    acadêmica voltado para capacitação
+                    tecnológica e preparação para o mercado
+                    de trabalho.
+                </p>
+
+            </div>
+
+
+            <div class="about-content">
+
+                <div>
+
+                    <h3>
+                        Nosso objetivo
+                    </h3>
+
+                    <p>
+                        Aproximar pessoas da tecnologia,
+                        oferecendo conteúdos gratuitos,
+                        simples e acessíveis.
+                    </p>
+
+                    <p>
+                        A proposta é ajudar estudantes e
+                        participantes a desenvolverem
+                        competências digitais importantes
+                        para sua formação e carreira.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Para quem é?
+                    </h3>
+
+                    <p>
+                        Para pessoas que desejam aprender
+                        tecnologia, melhorar suas habilidades
+                        digitais e se preparar para novas
+                        oportunidades profissionais.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         CADASTRO / CTA
+    =================================================== -->
+
+    <section
+        class="cta"
+        id="cadastro">
+
+        <div class="container cta-content">
+
+            <div>
+
+                <span class="section-label">
+                    SEU FUTURO COMEÇA AGORA
+                </span>
+
+                <h2>
+                    Pronto para
+                    <span>começar?</span>
+                </h2>
+
+                <p>
+                    Escolha uma trilha e comece sua jornada
+                    de aprendizado.
+                </p>
+
+            </div>
+
+
+            <a
+                href="cadastro.html"
+                class="btn btn-light">
+
+                Começar agora →
+
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ==================================================
+     RODAPÉ
+=================================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+
+        <!-- LOGO -->
+
+        <div>
+
+            <a
+                href="#inicio"
+                class="logo footer-logo">
+
+                <span class="logo-icon">
+                    ⚡
+                </span>
+
+                <span>
+                    Conecta<span>Futuro</span>
+                </span>
+
+            </a>
+
+            <p>
+                Tecnologia que conecta você às
+                oportunidades.
+            </p>
+
+        </div>
+
+
+
+        <!-- LINKS DO PROJETO -->
+
+        <div class="footer-links">
+
+            <h4>
+                Projeto
+            </h4>
+
+            <a href="#sobre">
+                Sobre
+            </a>
+
+            <a href="#trilhas">
+                Trilhas
+            </a>
+
+            <a href="#tecnologias">
+                Tecnologia
+            </a>
+
+        </div>
+
+
+
+        <!-- INSTITUIÇÃO -->
+
+        <div class="footer-links">
+
+            <h4>
+                Instituição
+            </h4>
+
+            <p>
+                Centro Universitário Maurício de Nassau
+            </p>
+
+            <p>
+                Análise e Desenvolvimento de Sistemas
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- COPYRIGHT -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Conecta Futuro.
+            Projeto de extensão acadêmica.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="js/script.js"></script>
