@@ -8,6 +8,17 @@ const supabaseClient = supabase.createClient(
 
 const formCadastro = document.getElementById('formCadastro');
 
+document.querySelectorAll('.password-toggle').forEach((button) => {
+  button.addEventListener('click', () => {
+    const passwordInput = document.getElementById(button.getAttribute('aria-controls'));
+    const isVisible = passwordInput.type === 'text';
+
+    passwordInput.type = isVisible ? 'password' : 'text';
+    button.setAttribute('aria-pressed', String(!isVisible));
+    button.setAttribute('aria-label', isVisible ? 'Mostrar senha' : 'Ocultar senha');
+  });
+});
+
 formCadastro.addEventListener('submit', async (event) => {
   event.preventDefault();
 
