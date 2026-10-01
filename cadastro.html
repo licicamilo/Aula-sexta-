@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conecta Futuro | Página Inicial</title>
+  <title>Cadastro | Conecta Futuro</title>
   <style>
     * {
       margin: 0;
@@ -15,6 +15,9 @@
       background: #0f172a;
       color: #e2e8f0;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     /* ===== HEADER ===== */
     header {
@@ -57,8 +60,7 @@
       font-size: 0.95rem;
       transition: color 0.2s;
     }
-    nav a:hover,
-    nav a.active {
+    nav a:hover {
       color: #38bdf8;
     }
     .btn-nav {
@@ -71,190 +73,99 @@
     .btn-nav:hover {
       opacity: 0.9;
     }
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: #e2e8f0;
-      font-size: 1.5rem;
-      cursor: pointer;
+    /* ===== AUTH ===== */
+    .auth-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
     }
-    /* ===== HERO ===== */
-    .hero {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 5rem 1.5rem 4rem;
+    .auth-container {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+    .auth-container h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 1.75rem;
+      color: #f1f5f9;
       text-align: center;
     }
-    .badge {
-      display: inline-block;
-      background: #1e293b;
-      color: #38bdf8;
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-      border: 1px solid #334155;
-    }
-    .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
-      font-weight: 800;
-      line-height: 1.15;
+    .auth-container form > div {
       margin-bottom: 1.25rem;
-      background: linear-gradient(to right, #f1f5f9, #38bdf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
-    .hero p {
-      font-size: 1.15rem;
-      color: #94a3b8;
-      max-width: 640px;
-      margin: 0 auto 2.5rem;
+    .auth-container label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #cbd5e1;
     }
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
+    .auth-container input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .btn-primary {
+    .auth-container input:focus {
+      outline: none;
+      border-color: #0ea5e9;
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+    }
+    .auth-container input::placeholder {
+      color: #64748b;
+    }
+    .auth-container button {
+      width: 100%;
       background: linear-gradient(135deg, #0ea5e9, #0284c7);
       color: white;
-      padding: 0.9rem 1.8rem;
+      padding: 0.95rem;
+      border: none;
       border-radius: 10px;
-      text-decoration: none;
       font-weight: 600;
       font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .btn-primary:hover {
+    .auth-container button:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
     }
-    .btn-secondary {
-      background: transparent;
-      color: #94a3b8;
-      padding: 0.9rem 1.8rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 500;
-      border: 1px solid #334155;
-      transition: all 0.2s;
-    }
-    .btn-secondary:hover {
-      border-color: #38bdf8;
-      color: #38bdf8;
-    }
-    /* ===== STATS ===== */
-    .stats {
-      max-width: 900px;
-      margin: 0 auto 4rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      padding: 0 1.5rem;
-    }
-    .stat-card {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      padding: 1.5rem;
+    .login-link {
       text-align: center;
-    }
-    .stat-card strong {
-      display: block;
-      font-size: 1.6rem;
-      color: #38bdf8;
-      margin-bottom: 0.3rem;
-    }
-    .stat-card span {
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
-    /* ===== SECTION ===== */
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .section-header h2 {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: #f1f5f9;
-    }
-    .section-header p {
-      color: #94a3b8;
-      max-width: 560px;
-      margin: 0 auto;
-    }
-    /* ===== CARDS ===== */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 14px;
-      padding: 1.75rem;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: #0ea5e9;
-    }
-    .card-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.6rem;
-      color: #f1f5f9;
-    }
-    .card p {
+      margin-top: 1.75rem;
       color: #94a3b8;
       font-size: 0.95rem;
-      margin-bottom: 1.25rem;
     }
-    .card a {
+    .login-link a {
       color: #38bdf8;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.95rem;
     }
-    .card a:hover {
+    .login-link a:hover {
       text-decoration: underline;
     }
-    /* ===== FOOTER ===== */
     footer {
       border-top: 1px solid #1e293b;
-      padding: 2rem 1.5rem;
+      padding: 1.5rem;
       text-align: center;
       color: #64748b;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-      .menu-toggle {
-        display: block;
-      }
-      .stats {
-        grid-template-columns: 1fr;
-      }
-      .hero {
-        padding: 3.5rem 1.25rem 3rem;
+    @media (max-width: 480px) {
+      .auth-container {
+        padding: 2rem 1.5rem;
       }
     }
   </style>
@@ -264,84 +175,80 @@
   <header>
     <div class="nav-container">
       <a href="index.html" class="logo">⚡ <span>Conecta Futuro</span></a>
-      <button class="menu-toggle" aria-label="Menu">☰</button>
       <nav>
-        <a href="index.html" class="active">Início</a>
-        <a href="#trilhas">Trilhas</a>
-        <a href="#tecnologias">Tecnologias</a>
-        <a href="sobre.html">Sobre</a>
-        <!-- Botão que abre a página de cadastro -->
-        <a href="cadastro.html" class="btn-nav">Começar agora</a>
+        <a href="index.html">Início</a>
+        <a href="login.html">Login</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="badge">🚀 Projeto de extensão • 2026.2</div>
-    <h1>Conecta-se com o futuro</h1>
-    <p>Aprenda novas habilidades, desenvolva suas competências digitais e prepare-se para o mercado de trabalho.</p>
-    <div class="hero-buttons">
-      <!-- Botão principal que abre a página de cadastro -->
-      <a href="cadastro.html" class="btn-primary">Começar agora →</a>
-      <a href="sobre.html" class="btn-secondary">Conheça o projeto</a>
-    </div>
-  </section>
+  <!-- CADASTRO -->
+  <div class="auth-wrapper">
+    <main class="auth-container">
+      <h2>Criar Conta</h2>
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat-card">
-      <strong>4</strong>
-      <span>Trilhas disponíveis</span>
-    </div>
-    <div class="stat-card">
-      <strong>100%</strong>
-      <span>Gratuito</span>
-    </div>
-    <div class="stat-card">
-      <strong>Prático</strong>
-      <span>Aprendizado aplicado</span>
-    </div>
+      <form id="formCadastro">
+        <div>
+          <label for="nome">Nome Completo:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Digite seu nome"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="email">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="seuemail@exemplo.com"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="senha">Senha:</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            minlength="6"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="confirmarSenha">Confirmar Senha:</label>
+          <input
+            type="password"
+            id="confirmarSenha"
+            name="confirmarSenha"
+            placeholder="Confirme sua senha"
+            required
+          >
+        </div>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+
+      <p class="login-link">
+        Já possui uma conta?
+        <a href="login.html">Faça login</a>
+      </p>
+    </main>
   </div>
 
-  <!-- TRILHAS -->
-  <section class="section" id="trilhas">
-    <div class="section-header">
-      <h2>APRENDA E DESENVOLVA</h2>
-      <p>Conhecimento para novas oportunidades</p>
-      <p style="margin-top: 0.5rem;">Conteúdos simples, práticos e acessíveis para ajudar você a desenvolver habilidades importantes para o mundo digital.</p>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <div class="card-icon">💻</div>
-        <h3>Informática Básica</h3>
-        <p>Aprenda conceitos fundamentais de computadores, internet, arquivos, ferramentas digitais e muito mais.</p>
-        <a href="#">Explorar →</a>
-      </div>
-      <div class="card">
-        <div class="card-icon">🤖</div>
-        <h3>IA e Mercado</h3>
-        <p>Entenda como a inteligência artificial está transformando profissões e oportunidades.</p>
-        <a href="#">Explorar →</a>
-      </div>
-      <div class="card">
-        <div class="card-icon">💼</div>
-        <h3>Primeiro Emprego</h3>
-        <p>Aprenda a preparar currículo, participar de entrevistas e buscar oportunidades.</p>
-        <a href="#">Explorar →</a>
-      </div>
-      <div class="card">
-        <div class="card-icon">🚀</div>
-        <h3>Carreiras em Tecnologia</h3>
-        <p>Conheça áreas como programação, UX/UI, dados, segurança e marketing digital.</p>
-        <a href="#">Explorar →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
     <p>© 2026 Conecta Futuro • Projeto de Extensão • Análise e Desenvolvimento de Sistemas</p>
   </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/cadastro.js"></script>
 </body>
 </html>
