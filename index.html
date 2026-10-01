@@ -10,14 +10,12 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       background: #0f172a;
       color: #e2e8f0;
       line-height: 1.6;
     }
-
     /* ===== HEADER ===== */
     header {
       background: rgba(15, 23, 42, 0.95);
@@ -27,7 +25,6 @@
       top: 0;
       z-index: 100;
     }
-
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -36,7 +33,6 @@
       justify-content: space-between;
       align-items: center;
     }
-
     .logo {
       display: flex;
       align-items: center;
@@ -46,17 +42,14 @@
       color: #38bdf8;
       text-decoration: none;
     }
-
     .logo span {
       color: #f1f5f9;
     }
-
     nav {
       display: flex;
       align-items: center;
       gap: 1.75rem;
     }
-
     nav a {
       color: #94a3b8;
       text-decoration: none;
@@ -64,12 +57,10 @@
       font-size: 0.95rem;
       transition: color 0.2s;
     }
-
     nav a:hover,
     nav a.active {
       color: #38bdf8;
     }
-
     .btn-nav {
       background: linear-gradient(135deg, #0ea5e9, #0284c7);
       color: white !important;
@@ -77,11 +68,9 @@
       border-radius: 8px;
       font-weight: 600;
     }
-
     .btn-nav:hover {
       opacity: 0.9;
     }
-
     .menu-toggle {
       display: none;
       background: none;
@@ -90,7 +79,6 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
-
     /* ===== HERO ===== */
     .hero {
       max-width: 1200px;
@@ -98,7 +86,6 @@
       padding: 5rem 1.5rem 4rem;
       text-align: center;
     }
-
     .badge {
       display: inline-block;
       background: #1e293b;
@@ -110,7 +97,6 @@
       margin-bottom: 1.5rem;
       border: 1px solid #334155;
     }
-
     .hero h1 {
       font-size: clamp(2.2rem, 5vw, 3.4rem);
       font-weight: 800;
@@ -121,21 +107,18 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
     .hero p {
       font-size: 1.15rem;
       color: #94a3b8;
       max-width: 640px;
       margin: 0 auto 2.5rem;
     }
-
     .hero-buttons {
       display: flex;
       gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
     }
-
     .btn-primary {
       background: linear-gradient(135deg, #0ea5e9, #0284c7);
       color: white;
@@ -146,12 +129,10 @@
       font-size: 1rem;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
     }
-
     .btn-secondary {
       background: transparent;
       color: #94a3b8;
@@ -162,12 +143,10 @@
       border: 1px solid #334155;
       transition: all 0.2s;
     }
-
     .btn-secondary:hover {
       border-color: #38bdf8;
       color: #38bdf8;
     }
-
     /* ===== STATS ===== */
     .stats {
       max-width: 900px;
@@ -177,7 +156,6 @@
       gap: 1.5rem;
       padding: 0 1.5rem;
     }
-
     .stat-card {
       background: #1e293b;
       border: 1px solid #334155;
@@ -185,51 +163,42 @@
       padding: 1.5rem;
       text-align: center;
     }
-
     .stat-card strong {
       display: block;
       font-size: 1.6rem;
       color: #38bdf8;
       margin-bottom: 0.3rem;
     }
-
     .stat-card span {
       color: #94a3b8;
       font-size: 0.9rem;
     }
-
     /* ===== SECTION ===== */
     .section {
       max-width: 1200px;
       margin: 0 auto;
       padding: 4rem 1.5rem;
     }
-
     .section-header {
       text-align: center;
       margin-bottom: 3rem;
     }
-
     .section-header h2 {
       font-size: 1.9rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
-      color: #f1f5f9;
     }
-
     .section-header p {
       color: #94a3b8;
       max-width: 560px;
       margin: 0 auto;
     }
-
     /* ===== CARDS ===== */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
     }
-
     .card {
       background: #1e293b;
       border: 1px solid #334155;
@@ -237,40 +206,33 @@
       padding: 1.75rem;
       transition: transform 0.2s, border-color 0.2s;
     }
-
     .card:hover {
       transform: translateY(-4px);
       border-color: #0ea5e9;
     }
-
     .card-icon {
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-
     .card h3 {
       font-size: 1.2rem;
       margin-bottom: 0.6rem;
       color: #f1f5f9;
     }
-
     .card p {
       color: #94a3b8;
       font-size: 0.95rem;
       margin-bottom: 1.25rem;
     }
-
     .card a {
       color: #38bdf8;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
     }
-
     .card a:hover {
       text-decoration: underline;
     }
-
     /* ===== FOOTER ===== */
     footer {
       border-top: 1px solid #1e293b;
@@ -279,21 +241,17 @@
       color: #64748b;
       font-size: 0.9rem;
     }
-
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       nav {
         display: none;
       }
-
       .menu-toggle {
         display: block;
       }
-
       .stats {
         grid-template-columns: 1fr;
       }
-
       .hero {
         padding: 3.5rem 1.25rem 3rem;
       }
@@ -301,20 +259,18 @@
   </style>
 </head>
 <body>
-
   <!-- HEADER -->
   <header>
     <div class="nav-container">
       <a href="index.html" class="logo">⚡ <span>Conecta Futuro</span></a>
-
       <button class="menu-toggle" aria-label="Menu">☰</button>
-
       <nav>
         <a href="index.html" class="active">Início</a>
         <a href="#trilhas">Trilhas</a>
         <a href="#tecnologias">Tecnologias</a>
         <a href="sobre.html">Sobre</a>
-        <a href="#comecar" class="btn-nav">Começar agora</a>
+        <!-- Alterado: agora vai para cadastro.html -->
+        <a href="cadastro.html" class="btn-nav">Começar agora</a>
       </nav>
     </div>
   </header>
@@ -325,7 +281,8 @@
     <h1>Conecta-se com o futuro</h1>
     <p>Aprenda novas habilidades, desenvolva suas competências digitais e prepare-se para o mercado de trabalho.</p>
     <div class="hero-buttons">
-      <a href="#comecar" class="btn-primary">Começar agora →</a>
+      <!-- Alterado: agora vai para cadastro.html -->
+      <a href="cadastro.html" class="btn-primary">Começar agora →</a>
       <a href="sobre.html" class="btn-secondary">Conheça o projeto</a>
     </div>
   </section>
@@ -353,33 +310,25 @@
       <p>Conhecimento para novas oportunidades</p>
       <p style="margin-top: 0.5rem;">Conteúdos simples, práticos e acessíveis para ajudar você a desenvolver habilidades importantes para o mundo digital.</p>
     </div>
-
     <div class="cards">
-      <!-- Card 1 -->
       <div class="card">
         <div class="card-icon">💻</div>
         <h3>Informática Básica</h3>
         <p>Aprenda conceitos fundamentais de computadores, internet, arquivos, ferramentas digitais e muito mais.</p>
         <a href="#">Explorar →</a>
       </div>
-
-      <!-- Card 2 -->
       <div class="card">
         <div class="card-icon">🤖</div>
         <h3>IA e Mercado</h3>
         <p>Entenda como a inteligência artificial está transformando profissões e oportunidades.</p>
         <a href="#">Explorar →</a>
       </div>
-
-      <!-- Card 3 -->
       <div class="card">
         <div class="card-icon">💼</div>
         <h3>Primeiro Emprego</h3>
         <p>Aprenda a preparar currículo, participar de entrevistas e buscar oportunidades.</p>
         <a href="#">Explorar →</a>
       </div>
-
-      <!-- Card 4 -->
       <div class="card">
         <div class="card-icon">🚀</div>
         <h3>Carreiras em Tecnologia</h3>
@@ -393,6 +342,5 @@
   <footer>
     <p>© 2026 Conecta Futuro • Projeto de Extensão • Análise e Desenvolvimento de Sistemas</p>
   </footer>
-
 </body>
 </html>
