@@ -1,38 +1,259 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/auth.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Conecta Futuro</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    /* ===== HEADER ===== */
+    header {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    .logo span {
+      color: #f1f5f9;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #38bdf8;
+    }
+    .btn-nav {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      color: white !important;
+      padding: 0.55rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .btn-nav:hover {
+      opacity: 0.9;
+    }
+    /* ===== AUTH CONTAINER ===== */
+    .auth-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+    .auth-container {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+    .auth-container h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #f1f5f9;
+      text-align: center;
+    }
+    .auth-description {
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: #0ea5e9;
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+    }
+    .form-group input::placeholder {
+      color: #64748b;
+    }
+    .auth-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.75rem;
+      font-size: 0.9rem;
+    }
+    .auth-options label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #94a3b8;
+      cursor: pointer;
+    }
+    .auth-options input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: #0ea5e9;
+    }
+    .auth-options a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .auth-options a:hover {
+      text-decoration: underline;
+    }
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      color: white;
+      padding: 0.95rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 1.75rem;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+    .login-link a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid #1e293b;
+      padding: 1.5rem;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 480px) {
+      .auth-container {
+        padding: 2rem 1.5rem;
+      }
+      .auth-options {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">⚡ <span>Conecta Futuro</span></a>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="cadastro.html" class="btn-nav">Começar agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- LOGIN FORM -->
+  <div class="auth-wrapper">
     <main class="auth-container">
-        <h2>Bem-vindo de volta!</h2>
-        <p class="auth-description">Faça login para acessar sua conta</p>
+      <h2>Bem-vindo de volta!</h2>
+      <p class="auth-description">Faça login para acessar sua conta</p>
 
-        <form action="#" method="POST">
-            <div>
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-            </div>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+        </div>
 
-            <div>
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-            </div>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+        </div>
 
-            <div class="auth-options">
-                <label for="remember">
-                    <input type="checkbox" id="remember" name="remember"> Lembrar de mim
-                </label>
-                <a href="#">Esqueceu a senha?</a>
-            </div>
+        <div class="auth-options">
+          <label for="remember">
+            <input type="checkbox" id="remember" name="remember"> Lembrar de mim
+          </label>
+          <a href="#">Esqueceu a senha?</a>
+        </div>
 
-            <button type="submit">Entrar</button>
-        </form>
+        <button type="submit" class="btn-submit">Entrar</button>
+      </form>
 
-        <p class="login-link">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+      <p class="login-link">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
     </main>
+  </div>
+
+  <footer>
+    <p>© 2026 Conecta Futuro • Projeto de Extensão • Análise e Desenvolvimento de Sistemas</p>
+  </footer>
 </body>
 </html>
