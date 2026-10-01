@@ -1,38 +1,14 @@
-{
-    display: none;
-    border: none;
-    background: transparent;
-    font-size: 28px;
-    cursor: pointer;
-}
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
 
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('ativo');
+  menuToggle.textContent = nav.classList.contains('ativo') ? '✕' : '☰';
+});
 
-@media (max-width: 768px) {
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: #ffffff;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        z-index: 1000;
-    }
-
-    .nav.active {
-        display: flex;
-    }
-
-    .nav a {
-        padding: 15px;
-        text-decoration: none;
-    }
-
-}
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('ativo');
+    menuToggle.textContent = '☰';
+  });
+});
