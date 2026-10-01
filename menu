@@ -1,4 +1,4 @@
-.menu-toggle {
+{
     display: none;
     border: none;
     background: transparent;
