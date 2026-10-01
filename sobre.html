@@ -1,118 +1,287 @@
-<!-- =========================
-     SOBRE
-========================== -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre | Conecta Futuro</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<section class="about" id="sobre">
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
 
-    <div class="container about-content">
+    /* ===== HEADER ===== */
+    header {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        <!-- IMAGEM / ÍCONE -->
-        <div class="about-image">
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-            <div class="about-circle">
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #38bdf8;
+      text-decoration: none;
+    }
 
-                <span>🌎</span>
+    .logo span {
+      color: #f1f5f9;
+    }
 
-                <strong>
-                    Tecnologia
-                </strong>
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
 
-                <small>
-                    para todos
-                </small>
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
 
-            </div>
+    nav a:hover,
+    nav a.active {
+      color: #38bdf8;
+    }
 
-        </div>
+    .btn-nav {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      color: white !important;
+      padding: 0.55rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
 
+    .btn-nav:hover {
+      opacity: 0.9;
+    }
 
-        <!-- TEXTO SOBRE -->
-        <div class="about-text">
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #e2e8f0;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
 
-            <span class="section-label">
-                SOBRE O CONECTA FUTURO
-            </span>
+    /* ===== HERO SOBRE ===== */
+    .hero-sobre {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 3rem;
+      text-align: center;
+    }
 
-            <h2>
-                Tecnologia também é
-                <span>oportunidade.</span>
-            </h2>
+    .hero-sobre .emoji {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
 
-            <p>
-                O Conecta Futuro é um projeto de extensão
-                desenvolvido por estudantes de Análise e
-                Desenvolvimento de Sistemas.
-            </p>
+    .hero-sobre h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      color: #f1f5f9;
+    }
 
-            <p>
-                Nosso objetivo é promover a inclusão digital
-                e ajudar jovens e pessoas da comunidade a
-                desenvolver competências importantes para
-                as transformações do mercado de trabalho.
-            </p>
+    .hero-sobre .subtitle {
+      font-size: 1.25rem;
+      color: #38bdf8;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
 
-            <div class="about-list">
+    /* ===== CONTEÚDO ===== */
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
 
-                <div>
-                    <span>✓</span>
-                    Conteúdo gratuito
-                </div>
+    .content p {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
+    }
 
-                <div>
-                    <span>✓</span>
-                    Linguagem acessível
-                </div>
+    .content strong {
+      color: #e2e8f0;
+    }
 
-                <div>
-                    <span>✓</span>
-                    Atividades práticas
-                </div>
+    /* ===== BENEFÍCIOS ===== */
+    .beneficios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
 
-                <div>
-                    <span>✓</span>
-                    Preparação profissional
-                </div>
+    .beneficio {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
 
-            </div>
+    .beneficio .check {
+      color: #22c55e;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
 
-        </div>
+    .beneficio span {
+      color: #e2e8f0;
+      font-weight: 500;
+    }
 
+    /* ===== CTA ===== */
+    .cta {
+      text-align: center;
+      margin-top: 3.5rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      color: white;
+      padding: 0.9rem 1.8rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      display: inline-block;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid #1e293b;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero-sobre {
+        padding: 3.5rem 1.25rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">⚡ <span>Conecta Futuro</span></a>
+
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="index.html#trilhas">Trilhas</a>
+        <a href="index.html#tecnologias">Tecnologias</a>
+        <a href="sobre.html" class="active">Sobre</a>
+        <a href="index.html#comecar" class="btn-nav">Começar agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SOBRE -->
+  <section class="hero-sobre">
+    <div class="emoji">🌎</div>
+    <h1>Tecnologia para todos</h1>
+    <p class="subtitle">SOBRE O CONECTA FUTURO</p>
+  </section>
+
+  <!-- CONTEÚDO -->
+  <div class="content">
+    <p><strong>Tecnologia também é oportunidade.</strong></p>
+
+    <p>
+      O <strong>Conecta Futuro</strong> é um projeto de extensão desenvolvido por estudantes de 
+      <strong>Análise e Desenvolvimento de Sistemas</strong>.
+    </p>
+
+    <p>
+      Nosso objetivo é promover a <strong>inclusão digital</strong> e ajudar jovens e pessoas da comunidade 
+      a desenvolver competências importantes para as transformações do mercado de trabalho.
+    </p>
+
+    <!-- BENEFÍCIOS -->
+    <div class="beneficios">
+      <div class="beneficio">
+        <span class="check">✓</span>
+        <span>Conteúdo gratuito</span>
+      </div>
+      <div class="beneficio">
+        <span class="check">✓</span>
+        <span>Linguagem acessível</span>
+      </div>
+      <div class="beneficio">
+        <span class="check">✓</span>
+        <span>Atividades práticas</span>
+      </div>
+      <div class="beneficio">
+        <span class="check">✓</span>
+        <span>Preparação profissional</span>
+      </div>
     </div>
 
-</section>
-
-
-<!-- =========================
-     CTA
-========================== -->
-
-<section class="cta">
-
-    <div class="container cta-content">
-
-        <div>
-
-            <span class="section-label">
-                SEU FUTURO COMEÇA AGORA
-            </span>
-
-            <h2>
-                Pronto para
-                <span>começar?</span>
-            </h2>
-
-            <p>
-                Escolha uma trilha e comece sua jornada
-                de aprendizado.
-            </p>
-
-        </div>
-
-        <a href="#trilhas" class="btn btn-light">
-            Explorar trilhas →
-        </a>
-
+    <!-- CTA -->
+    <div class="cta">
+      <a href="index.html" class="btn-primary">← Voltar para o início</a>
     </div>
+  </div>
 
-</section>
-```
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Conecta Futuro • Projeto de Extensão • Análise e Desenvolvimento de Sistemas</p>
+  </footer>
+
+</body>
+</html>
