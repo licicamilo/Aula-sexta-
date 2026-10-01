@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Recuperar senha | Conecta Futuro</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+			background: #0f172a;
+			color: #e2e8f0;
+			line-height: 1.6;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+		}
+		header {
+			background: rgba(15, 23, 42, 0.95);
+			backdrop-filter: blur(12px);
+			border-bottom: 1px solid #1e293b;
+			position: sticky;
+			top: 0;
+			z-index: 100;
+		}
+		.nav-container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 1rem 1.5rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.logo {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			font-size: 1.35rem;
+			font-weight: 700;
+			color: #38bdf8;
+			text-decoration: none;
+		}
+		.logo span {
+			color: #f1f5f9;
+		}
+		nav a {
+			color: #94a3b8;
+			text-decoration: none;
+			font-weight: 500;
+			font-size: 0.95rem;
+		}
+		nav a:hover {
+			color: #38bdf8;
+		}
+		.auth-wrapper {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 3rem 1.5rem;
+		}
+		.auth-container {
+			background: #1e293b;
+			border: 1px solid #334155;
+			border-radius: 16px;
+			padding: 2.5rem;
+			width: 100%;
+			max-width: 440px;
+			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+		}
+		.auth-container h1 {
+			font-size: 1.7rem;
+			font-weight: 700;
+			margin-bottom: 0.5rem;
+			color: #f1f5f9;
+			text-align: center;
+		}
+		.auth-description {
+			color: #94a3b8;
+			text-align: center;
+			margin-bottom: 2rem;
+			font-size: 0.95rem;
+		}
+		.auth-container form > div {
+			margin-bottom: 1.25rem;
+		}
+		.auth-container label {
+			display: block;
+			margin-bottom: 0.4rem;
+			font-weight: 500;
+			font-size: 0.9rem;
+			color: #cbd5e1;
+		}
+		.auth-container input {
+			width: 100%;
+			padding: 0.85rem 1rem;
+			background: #0f172a;
+			border: 1px solid #334155;
+			border-radius: 10px;
+			color: #e2e8f0;
+			font-size: 0.95rem;
+			transition: border-color 0.2s, box-shadow 0.2s;
+		}
+		.auth-container input:focus {
+			outline: none;
+			border-color: #0ea5e9;
+			box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+		}
+		.auth-container input::placeholder {
+			color: #64748b;
+		}
+		.auth-container input[name="token"] {
+			text-align: center;
+			font-size: 1.25rem;
+			letter-spacing: 0.25rem;
+		}
+		.auth-container button[type="submit"],
+		.secondary-button {
+			width: 100%;
+			padding: 0.95rem;
+			border: none;
+			border-radius: 10px;
+			font-weight: 600;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: transform 0.2s, box-shadow 0.2s;
+		}
+		.auth-container button[type="submit"] {
+			background: linear-gradient(135deg, #0ea5e9, #0284c7);
+			color: white;
+		}
+		.auth-container button[type="submit"]:hover:not(:disabled) {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
+		}
+		.auth-container button:disabled {
+			cursor: wait;
+			opacity: 0.7;
+		}
+		.secondary-button {
+			margin-top: 0.75rem;
+			background: transparent;
+			color: #38bdf8;
+		}
+		.secondary-button:hover:not(:disabled) {
+			background: rgba(56, 189, 248, 0.08);
+		}
+		.status-message {
+			min-height: 1.5rem;
+			margin-top: 1rem;
+			color: #cbd5e1;
+			font-size: 0.9rem;
+			text-align: center;
+		}
+		.status-message[data-kind="error"] {
+			color: #fca5a5;
+		}
+		.status-message[data-kind="success"] {
+			color: #86efac;
+		}
+		.login-link {
+			text-align: center;
+			margin-top: 1.75rem;
+			color: #94a3b8;
+			font-size: 0.95rem;
+		}
+		.login-link a {
+			color: #38bdf8;
+			text-decoration: none;
+			font-weight: 600;
+		}
+		.login-link a:hover {
+			text-decoration: underline;
+		}
+		footer {
+			border-top: 1px solid #1e293b;
+			padding: 1.5rem;
+			text-align: center;
+			color: #64748b;
+			font-size: 0.85rem;
+		}
+		[hidden] {
+			display: none !important;
+		}
+		@media (max-width: 480px) {
+			.auth-container {
+				padding: 2rem 1.5rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="nav-container">
+			<a href="index.html" class="logo">⚡ <span>Conecta Futuro</span></a>
+			<nav><a href="login.html">Voltar ao login</a></nav>
+		</div>
+	</header>
+
+	<div class="auth-wrapper">
+		<main class="auth-container">
+			<h1 id="formTitle">Esqueceu sua senha?</h1>
+			<p class="auth-description" id="formDescription">Informe o e-mail cadastrado para receber um código de recuperação.</p>
+
+			<form id="emailForm">
+				<div>
+					<label for="email">E-mail cadastrado</label>
+					<input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" required>
+				</div>
+				<button type="submit">Enviar código</button>
+			</form>
+
+			<form id="codeForm" hidden>
+				<div>
+					<label for="token">Código de 6 dígitos</label>
+					<input type="text" id="token" name="token" placeholder="000000" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required>
+				</div>
+				<button type="submit">Validar código</button>
+				<button class="secondary-button" id="resendCode" type="button">Reenviar código</button>
+			</form>
+
+			<form id="passwordForm" hidden>
+				<div>
+					<label for="newPassword">Nova senha</label>
+					<input type="password" id="newPassword" name="newPassword" placeholder="Digite sua nova senha" minlength="6" autocomplete="new-password" required>
+				</div>
+				<div>
+					<label for="confirmPassword">Confirmar nova senha</label>
+					<input type="password" id="confirmPassword" name="confirmPassword" placeholder="Digite a senha novamente" minlength="6" autocomplete="new-password" required>
+				</div>
+				<button type="submit">Salvar nova senha</button>
+			</form>
+
+			<p class="status-message" id="statusMessage" role="status" aria-live="polite"></p>
+			<p class="login-link"><a href="login.html">Voltar ao login</a></p>
+		</main>
+	</div>
+
+	<footer>
+		<p>© 2026 Conecta Futuro • Projeto de Extensão • Análise e Desenvolvimento de Sistemas</p>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+	<script src="js/esqueceu-senha.js"></script>
+</body>
+</html>
