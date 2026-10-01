@@ -1,9 +1,24 @@
+
+
+Pular para o conteúdo
+Como usar o Gmail com leitores de tela
+Ativar as notificações na área de trabalho para o Gmail.
+   OK  Agora não(a)
+1 de muitas
+(sem assunto)
+Caixa de entrada
+Resumir este e-mail
+
+Lucas Braz <brazl3198@gmail.com>
+20:16 (há 0 minuto)
+para mim
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tecnologias | Conecta Futuro</title>
+  <title>Conecta Futuro | Página Inicial</title>
   <style>
     * {
       margin: 0;
@@ -35,7 +50,7 @@
     @keyframes scaleIn {
       from {
         opacity: 0;
-        transform: scale(0.92);
+        transform: scale(0.9);
       }
       to {
         opacity: 1;
@@ -51,7 +66,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      animation: fadeIn 0.5s ease-out;
+      animation: fadeIn 0.6s ease-out;
     }
     .nav-container {
       max-width: 1200px;
@@ -118,18 +133,14 @@
       cursor: pointer;
     }
 
-    /* ===== SECTION ===== */
-    .section {
+    /* ===== HERO ===== */
+    .hero {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 4.5rem 1.5rem;
-    }
-    .section-header {
+      padding: 5rem 1.5rem 4rem;
       text-align: center;
-      margin-bottom: 3.5rem;
-      animation: fadeInUp 0.7s ease-out;
     }
-    .section-label {
+    .badge {
       display: inline-block;
       background: #1e293b;
       color: #38bdf8;
@@ -137,71 +148,179 @@
       border-radius: 50px;
       font-size: 0.85rem;
       font-weight: 500;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
       border: 1px solid #334155;
+      animation: fadeInUp 0.6s ease-out;
     }
-    .section-header h2 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 700;
-      margin-bottom: 0.85rem;
-      color: #f1f5f9;
-    }
-    .section-header h2 span {
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
       background: linear-gradient(to right, #f1f5f9, #38bdf8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      animation: fadeInUp 0.7s ease-out 0.1s both;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+      animation: fadeInUp 0.7s ease-out 0.2s both;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.7s ease-out 0.3s both;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      color: white;
+      padding: 0.9rem 1.8rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #94a3b8;
+      padding: 0.9rem 1.8rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      border: 1px solid #334155;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+      transform: translateY(-2px);
+    }
+
+    /* ===== STATS ===== */
+    .stats {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding: 0 1.5rem;
+    }
+    .stat-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      animation: scaleIn 0.6s ease-out both;
+    }
+    .stat-card:nth-child(1) { animation-delay: 0.3s; }
+    .stat-card:nth-child(2) { animation-delay: 0.4s; }
+    .stat-card:nth-child(3) { animation-delay: 0.5s; }
+    .stat-card:hover {
+      transform: translateY(-6px);
+      border-color: #0ea5e9;
+      box-shadow: 0 12px 30px rgba(14, 165, 233, 0.15);
+    }
+    .stat-card strong {
+      display: block;
+      font-size: 1.6rem;
+      color: #38bdf8;
+      margin-bottom: 0.3rem;
+    }
+    .stat-card span {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      animation: fadeInUp 0.7s ease-out both;
+    }
+    .section-header h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #f1f5f9;
     }
     .section-header p {
       color: #94a3b8;
       max-width: 560px;
       margin: 0 auto;
-      font-size: 1.05rem;
     }
 
-    /* ===== CAREER GRID ===== */
-    .career-grid {
+    /* ===== CARDS ===== */
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
     }
-    .career-card {
+    .card {
       background: #1e293b;
       border: 1px solid #334155;
       border-radius: 14px;
-      padding: 1.85rem;
+      padding: 1.75rem;
       transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-      animation: scaleIn 0.55s ease-out both;
+      animation: fadeInUp 0.6s ease-out both;
     }
-    .career-card:nth-child(1) { animation-delay: 0.1s; }
-    .career-card:nth-child(2) { animation-delay: 0.18s; }
-    .career-card:nth-child(3) { animation-delay: 0.26s; }
-    .career-card:nth-child(4) { animation-delay: 0.34s; }
-    .career-card:nth-child(5) { animation-delay: 0.42s; }
-    .career-card:nth-child(6) { animation-delay: 0.5s; }
-
-    .career-card:hover {
+    .card:nth-child(1) { animation-delay: 0.15s; }
+    .card:nth-child(2) { animation-delay: 0.25s; }
+    .card:nth-child(3) { animation-delay: 0.35s; }
+    .card:nth-child(4) { animation-delay: 0.45s; }
+    .card:hover {
       transform: translateY(-8px);
       border-color: #0ea5e9;
       box-shadow: 0 16px 40px rgba(14, 165, 233, 0.15);
     }
-    .career-card span {
-      font-size: 2.1rem;
-      display: block;
+    .card-icon {
+      font-size: 2rem;
       margin-bottom: 1rem;
       transition: transform 0.3s;
     }
-    .career-card:hover span {
+    .card:hover .card-icon {
       transform: scale(1.15);
     }
-    .career-card h3 {
+    .card h3 {
       font-size: 1.2rem;
-      margin-bottom: 0.55rem;
+      margin-bottom: 0.6rem;
       color: #f1f5f9;
     }
-    .career-card p {
+    .card p {
       color: #94a3b8;
       font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+    .card a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: gap 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .card a:hover {
+      text-decoration: underline;
+      gap: 0.5rem;
     }
 
     /* ===== FOOTER ===== */
@@ -222,8 +341,11 @@
       .menu-toggle {
         display: block;
       }
-      .section {
-        padding: 3rem 1.25rem;
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding: 3.5rem 1.25rem 3rem;
       }
     }
   </style>
@@ -235,69 +357,77 @@
       <a href="index.html" class="logo">⚡ <span>Conecta Futuro</span></a>
       <button class="menu-toggle" aria-label="Menu">☰</button>
       <nav>
-        <a href="index.html">Início</a>
-        <a href="index.html#trilhas">Trilhas</a>
-        <a href="tecnologias.html" class="active">Tecnologias</a>
+        <a href="index.html" class="active">Início</a>
+        <a href="#trilhas">Trilhas</a>
+        <!-- Link corrigido para a página de Tecnologias -->
+        <a href="tecnologias.html">Tecnologias</a>
         <a href="sobre.html">Sobre</a>
         <a href="cadastro.html" class="btn-nav">Começar agora</a>
       </nav>
     </div>
   </header>
 
-  <!-- TECNOLOGIAS -->
-  <main>
-    <section class="section">
-      <div class="section-header">
-        <span class="section-label">EXPLORE AS POSSIBILIDADES</span>
-        <h2>
-          Onde a tecnologia
-          <span>pode levar você?</span>
-        </h2>
-        <p>
-          Conheça algumas das áreas que fazem parte
-          do mercado de tecnologia.
-        </p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">🚀 Projeto de extensão • 2026.2</div>
+    <h1>Conecta-se com o futuro</h1>
+    <p>Aprenda novas habilidades, desenvolva suas competências digitais e prepare-se para o mercado de trabalho.</p>
+    <div class="hero-buttons">
+      <a href="cadastro.html" class="btn-primary">Começar agora →</a>
+      <a href="sobre.html" class="btn-secondary">Conheça o projeto</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card">
+      <strong>4</strong>
+      <span>Trilhas disponíveis</span>
+    </div>
+    <div class="stat-card">
+      <strong>100%</strong>
+      <span>Gratuito</span>
+    </div>
+    <div class="stat-card">
+      <strong>Prático</strong>
+      <span>Aprendizado aplicado</span>
+    </div>
+  </div>
+
+  <!-- TRILHAS -->
+  <section class="section" id="trilhas">
+    <div class="section-header">
+      <h2>APRENDA E DESENVOLVA</h2>
+      <p>Conhecimento para novas oportunidades</p>
+      <p style="margin-top: 0.5rem;">Conteúdos simples, práticos e acessíveis para ajudar você a desenvolver habilidades importantes para o mundo digital.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <h3>Informática Básica</h3>
+        <p>Aprenda conceitos fundamentais de computadores, internet, arquivos, ferramentas digitais e muito mais.</p>
+        <a href="#">Explorar →</a>
       </div>
-
-      <div class="career-grid">
-        <div class="career-card">
-          <span>💻</span>
-          <h3>Programação</h3>
-          <p>Criação de sites, sistemas e aplicativos.</p>
-        </div>
-
-        <div class="career-card">
-          <span>🎨</span>
-          <h3>UX/UI</h3>
-          <p>Criação de experiências e interfaces digitais.</p>
-        </div>
-
-        <div class="career-card">
-          <span>📊</span>
-          <h3>Dados</h3>
-          <p>Transformação de informações em conhecimento.</p>
-        </div>
-
-        <div class="career-card">
-          <span>🔐</span>
-          <h3>Cibersegurança</h3>
-          <p>Proteção de sistemas, dados e usuários.</p>
-        </div>
-
-        <div class="career-card">
-          <span>📱</span>
-          <h3>Marketing Digital</h3>
-          <p>Estratégias para comunicação no ambiente digital.</p>
-        </div>
-
-        <div class="career-card">
-          <span>☁️</span>
-          <h3>Cloud & TI</h3>
-          <p>Infraestrutura, redes e serviços digitais.</p>
-        </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h3>IA e Mercado</h3>
+        <p>Entenda como a inteligência artificial está transformando profissões e oportunidades.</p>
+        <a href="#">Explorar →</a>
       </div>
-    </section>
-  </main>
+      <div class="card">
+        <div class="card-icon">💼</div>
+        <h3>Primeiro Emprego</h3>
+        <p>Aprenda a preparar currículo, participar de entrevistas e buscar oportunidades.</p>
+        <a href="#">Explorar →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚀</div>
+        <h3>Carreiras em Tecnologia</h3>
+        <p>Conheça áreas como programação, UX/UI, dados, segurança e marketing digital.</p>
+        <a href="tecnologias.html">Explorar →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
